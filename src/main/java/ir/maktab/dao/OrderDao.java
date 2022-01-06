@@ -1,5 +1,6 @@
 package ir.maktab.dao;
 
+import ir.maktab.model.Customer;
 import ir.maktab.model.Order;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
@@ -31,7 +32,7 @@ public class OrderDao {
         return order;
     }
 
-    public List<Order> findByCustomer(Order customer) {
+    public List<Order> findByCustomer(Customer customer) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         Query<Order> query = session.createQuery("FROM Order i WHERE i.customer=:customerValue");
@@ -41,4 +42,6 @@ public class OrderDao {
         session.close();
         return orders;
     }
+
+
 }
