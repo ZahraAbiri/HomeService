@@ -18,8 +18,8 @@ public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
-    private String family;
+    private String Firstname;
+    private String Lastname;
     private String emailAddress;
     private String password;
     @Enumerated(EnumType.STRING)
