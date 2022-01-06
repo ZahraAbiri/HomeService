@@ -11,7 +11,6 @@ import java.util.Set;
 @Entity
 public class Expert extends Person {
     @Lob
-    @Column(columnDefinition = "BLOB")
     private byte[] photo;
     private Double score;
     @ManyToMany(mappedBy = "experts",fetch = FetchType.EAGER)
