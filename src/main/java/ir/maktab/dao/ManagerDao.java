@@ -1,7 +1,6 @@
 package ir.maktab.dao;
 
 import ir.maktab.model.Manager;
-import ir.maktab.util.HibernateUtil;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -13,7 +12,7 @@ import java.util.Optional;
 @Repository
 @RequiredArgsConstructor
 public class ManagerDao {
-    private SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+    private final SessionFactory sessionFactory;
 
     public void save(Manager manager) {
         Session session = sessionFactory.openSession();
