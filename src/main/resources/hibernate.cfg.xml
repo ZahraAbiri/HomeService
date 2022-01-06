@@ -14,12 +14,12 @@
         <property name="hibernate.connection.pool_size">20</property>
         <property name="hbm2ddl.auto">update</property>
 
-        <mapping class="ir.maktab.model.Commit"/>
+        <mapping class="ir.maktab.model.Comment"/>
         <mapping class="ir.maktab.model.SubService"/>
         <mapping class="ir.maktab.model.Customer"/>
         <mapping class="ir.maktab.model.Expert"/>
         <mapping class="ir.maktab.model.Person"/>
-        <mapping class="ir.maktab.model.Commit"/>
+        <mapping class="ir.maktab.model.Comment"/>
         <mapping class="ir.maktab.model.Order"/>
         <mapping class="ir.maktab.model.Offer"/>
         <mapping class="ir.maktab.model.Manager"/>

@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-public class Commit {
+public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
