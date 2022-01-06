@@ -1,11 +1,13 @@
 package ir.maktab.model;
 
+import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Data
 public class Offer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
