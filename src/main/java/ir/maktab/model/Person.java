@@ -1,5 +1,6 @@
 package ir.maktab.model;
 
+import ir.maktab.model.enums.PersonStatuse;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
