@@ -5,13 +5,14 @@ import ir.maktab.model.Expert;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.IOException;
 import java.util.Optional;
 
 @Getter
 @Setter
 public class ExpertService {
     private ExpertDao expertDao;
-    public void save(Expert expert) {
+    public void save(Expert expert) throws IOException {
         expertDao.save(expert);
     }
 
