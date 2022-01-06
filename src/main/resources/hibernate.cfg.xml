@@ -23,6 +23,6 @@
         <mapping class="ir.maktab.model.Order"/>
         <mapping class="ir.maktab.model.Offer"/>
         <mapping class="ir.maktab.model.Manager"/>
-<!--        <mapping class="ir.maktab.model"/>-->
+
     </session-factory>
 </hibernate-configuration>
