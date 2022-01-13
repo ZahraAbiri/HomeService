@@ -20,7 +20,8 @@ public class Comment {
     String desciption;
     @ManyToOne
     private Customer customer;
-//    @ManyToOne(nullabale=flase)
+    @ManyToOne
+//    (nullabale=flase)
     private Expert expert;
     @OneToOne
     private Order order;
