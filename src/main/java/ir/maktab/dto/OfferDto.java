@@ -1,7 +1,6 @@
 package ir.maktab.dto;
 
-import ir.maktab.model.enums.PersonStatuse;
-import ir.maktab.model.enums.Role;
+import ir.maktab.model.enums.OfferStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,13 +12,13 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDto {
+public class OfferDto {
     private Long identificationNumber;
-    private String firstname;
-    private String lastname;
-    private String emailAddress;
-    private PersonStatuse personStatuse;
+    private ExpertDto expertDto;
+    private OrderDto orderDto;
     private Date registrationDate;
-    private Long credit;
-    private Role role;
+    private Long proposedPrice;
+    private int durationOfWork;
+    private Date startTime;
+    private OfferStatus offerStatus;
 }

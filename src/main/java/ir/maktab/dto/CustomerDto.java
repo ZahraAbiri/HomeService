@@ -13,14 +13,13 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ExpertDto {
+public class CustomerDto {
     private Long identificationNumber;
     private String firstname;
     private String lastname;
     private String emailAddress;
     private PersonStatuse personStatuse;
     private Date registrationDate;
+    private Long credit;
     private Role role;
-    private byte[] photo;
-    private Double score;
 }

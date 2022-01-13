@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SubServiceDto {
-    private String name;
-    private Long basePrice;
-    private String description;
-    private MainServiceDto mainServiceDto;
+public class CommentDto {
+    private Long identificationNumber;
+    private Double score;
+    private String opinion;
+    private OrderDto orderDto;
 }

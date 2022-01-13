@@ -9,9 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SubServiceDto {
-    private String name;
-    private Long basePrice;
-    private String description;
-    private MainServiceDto mainServiceDto;
+public class AddressDto {
+    private String city;
+    private String state;
+    private String streetAddress;
+    private String palque;
+    private Long zipCode;
 }
