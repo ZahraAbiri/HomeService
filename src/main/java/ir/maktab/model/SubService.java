@@ -16,7 +16,6 @@ public class SubService {
     @Column(unique = true)
     private String name;
     private Long basePrice;
-    @Lob
     private String description;
     @ManyToOne
     private MainService mainService;

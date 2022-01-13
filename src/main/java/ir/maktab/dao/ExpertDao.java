@@ -21,7 +21,7 @@ public class ExpertDao {
     public void save(Expert expert) throws IOException {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        File file = new File("image1.jpeg");
+        File file = new File("image1.jpeg");//service
         byte[] picInBytes = new byte[(int) file.length()];
         FileInputStream fileInputStream = new FileInputStream(file);
         fileInputStream.read(picInBytes);

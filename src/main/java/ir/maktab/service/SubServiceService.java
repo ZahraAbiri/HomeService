@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @Getter
 @Setter
+//@Service
 public class SubServiceService {
     private SubServiceDao subServiceDao;
 
@@ -29,9 +30,7 @@ public class SubServiceService {
         return false;
     }
 
-    public SubService findByName(String name) {
-        return subServiceDao.findByNameWhitCriteria(name);
-    }
+
 
     public List<SubService> findAll() {
         return subServiceDao.findAll();

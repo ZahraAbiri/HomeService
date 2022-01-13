@@ -15,7 +15,7 @@ public class testExpertSaveImage {
     public void testSaveExpertDao() throws IOException {
 
 
-        File file = new File("images/extjsfirstlook.jpg");
+        File file = new File("image1.jpg");
         byte[] bFile = new byte[(int) file.length()];
 
         try {
@@ -27,7 +27,7 @@ public class testExpertSaveImage {
         }
 
         Expert expert = new Expert();
-        expert.setFirstname("javad");
+        expert.setFirstNAme("javad");
         expert.setPhoto(bFile);
         expertDao.save(expert);
         Assertions.assertNotNull(expert.getId());

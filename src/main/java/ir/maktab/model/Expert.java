@@ -11,10 +11,11 @@ import java.util.Set;
 @Entity
 public class Expert extends Person {
     @Lob
+    @Column(columnDefinition = "BLOB" ,length = 300)
     private byte[] photo;
     private Double score;
-    @ManyToMany(mappedBy = "experts",fetch = FetchType.EAGER)
-    private Set<SubService> services = new HashSet<SubService>();
+    @ManyToMany(mappedBy = "experts",fetch = FetchType.EAGER)//lazy
+    private Set<SubService> services = new HashSet<>();
 
     @Override
     public String toString() {

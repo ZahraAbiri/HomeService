@@ -12,12 +12,13 @@ public class Offer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @ManyToOne
+    @ManyToOne//nullablefalse
     private Expert expert;
     @CreationTimestamp
     private Date registrationDate;
     private Long proposedPrice;
-    private int durationOfWork;
-    @Temporal(TemporalType.TIMESTAMP)
+    private Double durationOfWork;
+    @Temporal(TemporalType.TIME)
     private Date startTime;
+    //order many otone
 }

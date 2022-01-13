@@ -1,4 +1,5 @@
 import ir.maktab.regexValidation.Validation;
+import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,9 +8,9 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 public class TestValidation {
     static Validation validation;
-    @BeforeEach
+    @Before
     void init() {
-        Validation validation = new Validation();
+        this.validation = new Validation();
     }
 
     @ParameterizedTest

@@ -11,9 +11,6 @@ import org.springframework.stereotype.Repository;
 @RequiredArgsConstructor
 public class CommentDao {
     private final SessionFactory sessionFactory;
-
-
-
     public void save(Comment comment) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();

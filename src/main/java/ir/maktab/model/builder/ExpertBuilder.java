@@ -89,7 +89,7 @@ public final class ExpertBuilder {
         expert.setScore(score);
         expert.setServices(services);
         expert.setId(id);
-        expert.setFirstname(firstname);
+        expert.setFirstNAme(firstname);
         expert.setLastname(lastname);
         expert.setEmailAddress(emailAddress);
         expert.setPassword(password);

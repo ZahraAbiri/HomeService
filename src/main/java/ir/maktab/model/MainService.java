@@ -14,7 +14,7 @@ public class MainService {
     @Column(unique = true)
     private String name;
     @OneToMany(mappedBy = "mainService")
-    private Set<SubService> subServices;
+    private Set<SubService> subServices;//new
 
     @Override
     public String toString() {

@@ -65,7 +65,7 @@ public final class CustomerBuilder {
     public Customer build() {
         Customer customer = new Customer();
         customer.setId(id);
-        customer.setFirstname(firstname);
+        customer.setFirstNAme(firstname);
         customer.setLastname(lastname);
         customer.setEmailAddress(emailAddress);
         customer.setPassword(password);
