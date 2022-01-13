@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface MainService extends JpaRepository<MainService,Integer> {
-    Optional<MainService> findByName(String name);
+public interface MainServiceDao extends JpaRepository<MainServiceDao,Integer> {
+    Optional<MainServiceDao> findByName(String name);
 
 }
