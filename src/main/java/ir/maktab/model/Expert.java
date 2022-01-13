@@ -14,7 +14,7 @@ public class Expert extends Person {
     @Column(columnDefinition = "BLOB" ,length = 300)
     private byte[] photo;
     private Double score;
-    @ManyToMany(mappedBy = "experts",fetch = FetchType.EAGER)//lazy
+    @ManyToMany(mappedBy = "experts",fetch = FetchType.LAZY)//lazy
     private Set<SubService> services = new HashSet<>();
 
     @Override
