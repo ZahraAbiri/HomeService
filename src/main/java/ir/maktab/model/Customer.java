@@ -1,15 +1,18 @@
 package ir.maktab.model;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import ir.maktab.model.enums.PersonStatuse;
+import lombok.*;
 
 import javax.persistence.Entity;
+import java.util.Date;
 
-@Data
 @Entity
-@Getter
-@Setter
+@Data
+@Builder
+
 public class Customer extends Person{
-    //
+
+    public Customer() {
+        super();
+    }
 }

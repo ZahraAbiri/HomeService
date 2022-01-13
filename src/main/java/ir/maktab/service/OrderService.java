@@ -42,5 +42,7 @@ public class OrderService {
     }
 
 
-
+    public Order save(Order order) {
+       return orderDao.save(order);
+    }
 }

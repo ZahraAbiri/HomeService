@@ -1,9 +1,7 @@
 package ir.maktab.model;
 
 import ir.maktab.model.enums.PersonStatuse;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -14,11 +12,13 @@ import java.util.Date;
 @Data
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String firstNAme;//todo
+    private String firstname;
     private String Lastname;
     @Column(unique = true)
     private String emailAddress;

@@ -2,6 +2,7 @@ package ir.maktab.service;
 
 
 import ir.maktab.data.SubserviceDao;
+import ir.maktab.dto.ExpertDto;
 import ir.maktab.model.Expert;
 import ir.maktab.model.SubService;
 import org.springframework.stereotype.Service;
@@ -52,6 +53,7 @@ public class SubServiceService {
         subService.getExperts().remove(expert);
         return update(subService);
     }
+
 
 
 }

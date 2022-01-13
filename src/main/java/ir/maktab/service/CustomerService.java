@@ -22,8 +22,9 @@ public class CustomerService {
     private OfferService offerService;
 
 
-    public void save(Customer customer) {
+    public Customer save(Customer customer) {
         customerDao.save(customer);
+        return customer;
     }
 
     public Customer findByEmailAddress(String emailAddress) {

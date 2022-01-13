@@ -1,12 +1,18 @@
 package ir.maktab.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
 
-@Data
 @Entity
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class MainService {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

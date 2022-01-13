@@ -13,8 +13,9 @@ import java.util.Optional;
 @Setter
 public class ExpertService {
     private ExpertDao expertDao;
-    public void save(Expert expert) throws IOException {
+    public Expert save(Expert expert) throws IOException {
         expertDao.save(expert);
+        return expert;
     }
 
     public Expert findByEmailAddress(String emailAddress) {

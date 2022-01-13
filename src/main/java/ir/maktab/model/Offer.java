@@ -1,9 +1,7 @@
 package ir.maktab.model;
 
 import ir.maktab.model.enums.OfferStatus;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -11,8 +9,9 @@ import java.util.Date;
 
 @Entity
 @Data
-@Getter
-@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Offer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

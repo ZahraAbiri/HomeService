@@ -7,8 +7,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 
 @Service
 @Getter
@@ -22,7 +20,9 @@ public class MainServiceService {
     public void deleteMainService(MainService mainservice) {
          mainServiceDao.delete((MainServiceDao) mainservice);
     }
-    public Optional<MainServiceDao> findByName(String name) {
+    public MainService findByName(String name) {
        return mainServiceDao.findByName(name);
     }
+
+
 }

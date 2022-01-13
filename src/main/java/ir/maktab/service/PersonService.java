@@ -4,27 +4,30 @@ import ir.maktab.data.PersonDao;
 import ir.maktab.model.Person;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 
 @Getter
 @Setter
+@Service
 public class PersonService {
     private PersonDao personDao;
 
-    public void save(Person person) {
+    public Person save(Person person) {
         personDao.save(person);
+        return person;
     }
 
 //    public void update(Person person) {
 //        personDao.update(person);
 //    }
 
-    public Person findByEmailAddress(String emailAddress) {
-        Optional<Person> expert = personDao.findByEmailAddress(emailAddress);
-        if (expert.isPresent()) {
-            Person foundedUser = expert.get();
+    public static Person findByEmailAddress(String emailAddress) {
+        Optional<Person> person = personDao.findByEmailAddress(emailAddress);
+        if (person.isPresent()) {
+            Person foundedUser = person.get();
             return foundedUser;
         } else {
             throw new RuntimeException("emailAddress not exist!");
@@ -44,4 +47,7 @@ public class PersonService {
             throw new RuntimeException("password is wrong!");
         }
     }
+
+
+
 }
