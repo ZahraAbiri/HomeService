@@ -28,7 +28,7 @@ public class testExpertSaveImage {
         }
 
         Expert expert = new Expert();
-        expert.setFirstName("javad");
+        expert.setFirstname("javad");
         expert.setPhoto(bFile);
         expertDao.save(expert);
         Assertions.assertNotNull(expert.getId());

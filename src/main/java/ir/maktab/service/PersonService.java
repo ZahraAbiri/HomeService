@@ -13,7 +13,7 @@ import java.util.Optional;
 @Setter
 @Service
 public class PersonService {
-    private PersonDao personDao;
+    private static PersonDao personDao;
 
     public Person save(Person person) {
         personDao.save(person);
