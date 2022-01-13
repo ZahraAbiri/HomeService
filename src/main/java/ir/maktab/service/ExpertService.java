@@ -1,6 +1,7 @@
 package ir.maktab.service;
 
-import ir.maktab.dao.ExpertDao;
+
+import ir.maktab.data.ExpertDao;
 import ir.maktab.model.Expert;
 import lombok.Getter;
 import lombok.Setter;

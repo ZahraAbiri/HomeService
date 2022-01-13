@@ -1,14 +1,17 @@
 package ir.maktab.service;
 
-import ir.maktab.dao.ManagerDao;
+
+import ir.maktab.data.ManagerDao;
 import ir.maktab.model.Manager;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Getter
 @Setter
+@Service
 public class ManagerService {
     private ManagerDao managerDao;
 

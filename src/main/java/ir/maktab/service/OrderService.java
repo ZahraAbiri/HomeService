@@ -1,29 +1,46 @@
 package ir.maktab.service;
 
-import ir.maktab.dao.OrderDao;
-import ir.maktab.model.Customer;
+import ir.maktab.data.OrderDao;
+
+import ir.maktab.model.Offer;
 import ir.maktab.model.Order;
-import lombok.Getter;
-import lombok.Setter;
+import ir.maktab.model.enums.OfferStatus;
+import ir.maktab.model.enums.OrderStatus;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 
-@Getter
-@Setter
+@Service
+@RequiredArgsConstructor
 public class OrderService {
-    private OrderDao orderDao;
+    private final OrderDao orderDao;
 
-
-    public void save(Order order) {
-        orderDao.save(order);
+    public Order saveOrder(Order order) {
+        return orderDao.save(order);
     }
 
-    public Order get(Integer id) {
-        return orderDao.get(id);
+    public Order findById(Integer id) {
+        Optional<Order> order = orderDao.findById(id);
+        return order.orElseThrow(() -> new RuntimeException("this order not exist!"));
     }
 
-    public List<Order> findByCustomer(Customer customer) {
-        return orderDao.findByCustomer(customer);
+    public Offer findAcceptedOfferOfOrder(Order order) {
+        Offer acceptedOffer = null;
+        if (order.getOrderStatus().equals(OrderStatus.PAID)) {
+            Set<Offer> offers = order.getOffers();
+            for (Offer offer : offers) {
+                if (offer.getOfferStatus().equals(OfferStatus.ACCEPTED)) {
+                    acceptedOffer = offer;
+                }
+            }
+            return acceptedOffer;
+        } else {
+            throw new RuntimeException("Order not Paid!");
+        }
     }
+
+
+
 }
-

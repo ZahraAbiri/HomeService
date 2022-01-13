@@ -18,7 +18,6 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Integer id;
     private String city;
-    private String state;
     private String streetAddress;
     private String houseNumber;
     @Column(unique = true)

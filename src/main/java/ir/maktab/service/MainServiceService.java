@@ -1,27 +1,28 @@
 package ir.maktab.service;
 
-import ir.maktab.dao.MainServiceDao;
+
+import ir.maktab.data.MainServiceDao;
 import ir.maktab.model.MainService;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+
+@Service
 @Getter
 @Setter
 public class MainServiceService {
     private MainServiceDao mainServiceDao;
 
-    public void save(MainService mainService) {
-        mainServiceDao.save(mainService);
+//   public MainService saveMainService(MainService mainService){
+//       return mainServiceDao.save(mainService);
+//   }
+    public void deleteMainService(MainService mainservice) {
+         mainServiceDao.delete((MainServiceDao) mainservice);
     }
-
-    public MainService findMainService(String name) {
-        Optional<MainService> mainService = mainServiceDao.findByName(name);
-        if (mainService.isPresent()) {
-            return mainService.get();
-        } else {
-            throw new RuntimeException("this mainService not exist!");
-        }
+    public Optional<MainServiceDao> findByName(String name) {
+       return mainServiceDao.findByName(name);
     }
 }

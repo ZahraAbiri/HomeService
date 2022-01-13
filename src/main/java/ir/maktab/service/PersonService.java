@@ -1,8 +1,7 @@
 package ir.maktab.service;
 
-import ir.maktab.dao.PersonDao;
+import ir.maktab.data.PersonDao;
 import ir.maktab.model.Person;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,9 +17,9 @@ public class PersonService {
         personDao.save(person);
     }
 
-    public void update(Person person) {
-        personDao.update(person);
-    }
+//    public void update(Person person) {
+//        personDao.update(person);
+//    }
 
     public Person findByEmailAddress(String emailAddress) {
         Optional<Person> expert = personDao.findByEmailAddress(emailAddress);
@@ -29,6 +28,20 @@ public class PersonService {
             return foundedUser;
         } else {
             throw new RuntimeException("emailAddress not exist!");
+        }
+    }
+    public Person update(Person person) {
+        return personDao.save(person);
+    }
+
+    public Person changePassword(Person person, String currentPassword, String newPassword) {
+        String password = person.getPassword();
+        if (password.equals(currentPassword)) {
+            person.setPassword(newPassword);
+            System.out.println("your password change successfully.");
+            return update(person);
+        } else {
+            throw new RuntimeException("password is wrong!");
         }
     }
 }

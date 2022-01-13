@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 @Repository
 public interface CustomerDao extends JpaRepository<Customer,Integer> {
+    static void update(Customer customer) {
+    }
+
     Optional<Customer> findByEmailAddress(String email);
 
 }

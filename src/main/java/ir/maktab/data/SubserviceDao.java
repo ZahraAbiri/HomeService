@@ -10,4 +10,5 @@ import java.util.Optional;
 public interface SubserviceDao extends JpaRepository<SubService, Integer> {
     Optional<SubService> findByName(String name);
 
+    void update(SubService subService);
 }

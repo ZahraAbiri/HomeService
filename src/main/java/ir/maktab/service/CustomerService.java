@@ -1,16 +1,27 @@
 package ir.maktab.service;
 
-import ir.maktab.dao.CustomerDao;
+
+import ir.maktab.data.CustomerDao;
 import ir.maktab.model.Customer;
-import lombok.Getter;
-import lombok.Setter;
+import ir.maktab.model.Expert;
+import ir.maktab.model.Offer;
+import ir.maktab.model.Order;
+import ir.maktab.model.enums.OfferStatus;
+import ir.maktab.model.enums.OrderStatus;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
-@Getter
-@Setter
+
+@Service
 public class CustomerService {
     private CustomerDao customerDao;
+    private OrderService orderService;
+    private OfferService offerService;
+
+
     public void save(Customer customer) {
         customerDao.save(customer);
     }
@@ -31,6 +42,40 @@ public class CustomerService {
             throw new RuntimeException("this emailAddress exist!");
         } else {
             return false;
+        }
+    }
+
+    public void deleteCustomer(Customer customer) {
+        customerDao.delete(customer);
+    }
+
+    public void updateCustomer(Customer customer) {
+        CustomerDao.update(customer);
+    }
+
+
+    public List<Customer> findAll() {
+        return customerDao.findAll();
+    }
+
+
+    public Customer saveCustomer(Customer customer) {
+        return customerDao.save(customer);
+    }
+
+    public void acceptOfferForOrder(Order order, Expert expert) {
+        order.setExpert(expert);
+        order.setOrderStatus(OrderStatus.WATINGFORTHEEXPERTTOARRIVE);
+        orderService.saveOrder(order);
+        Offer acceptedOffer = offerService.findByOrderAndExpert(order, expert);
+        Set<Offer> offers = order.getOffers();
+        for (Offer offer : offers) {
+            if (offer.equals(acceptedOffer)) {
+                offer.setOfferStatus(OfferStatus.ACCEPTED);
+            } else {
+                offer.setOfferStatus(OfferStatus.REJECTED);
+            }
+            offerService.save(offer);
         }
     }
 }
